@@ -19,15 +19,8 @@ class Solution:
 
     def encode(self, text: str, stoi: Dict[str, int]) -> List[int]:
         # Convert a string to a list of integers using stoi mapping
-        result = []
-        for t in text:
-            result.append(stoi[t])
-        return result
+        return [stoi[t] for t in text]
 
     def decode(self, ids: List[int], itos: Dict[int, str]) -> str:
         # Convert a list of integers back to a string using itos mapping
-        str = ''
-        for i in ids:
-            str += itos[i]
-
-        return str
+        return "".join(itos[i] for i in ids)        
